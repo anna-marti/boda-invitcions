@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta, title, CSS, favicon, etc. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna i Martí</title>
+
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+
+  <!-- Custom Google Font : Roboto -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
+  <!-- Custom Google Font : Great Vibes -->
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="envelope">
+		<div id="envelope_front">
+			<h1 class="recipient">
+				<%=nom+' '+cognoms%>
+			</h1>
+		</div>
+		<div id="envelope_back">
+			<div id="flap_outside"></div>
+			<div id="flap_inside"></div>
+			<div id="envelope_back_outside"></div>
+			<div id="card">
+				<div id="card_outside_front">
+					<p class="welcome">
+						Benvolgut/da <strong><%=nom%></strong>, tenim el plaer de convidar-te oficialment a la nostra boda
+						que celebrarem el dia <strong>1/10/16 al “DBlanc” de Malgrat de Mar</strong>.
+					</p>
+					<p>
+						<h2>Vindràs?</h2>
+						<div class="choice">
+							<label for="vindra">Si</label>
+							<input type="radio" value="true" name="vindra" <%=vindra === true ? 'checked':''%> />
+
+							<label for="vindra">No</label>
+							<input type="radio" value="false" name="vindra" <%=vindra === false ? 'checked':''%> />
+						</div>
+					</p>
+					<p>
+						<h2>Portaràs parella?</h2>
+						<div class="choice">
+							<label for="parella">Si</label>
+							<input type="radio" value="1" name="parella" <%=parella === 1 ? 'checked':''%> />
+
+							<label for="parella">Sí, però no ha rebut la invitació</label>
+							<input type="radio" value="2" name="parella" <%=parella === 2 ? 'checked':''%> />
+
+							<label for="parella">No</label>
+							<input type="radio" value="0" name="parella" <%=parella === 0 ? 'checked':''%>/>
+						</div>
+					</p>
+					<p>
+						<h2>Poratràs els teus nens?</h2>
+						<div class="choice">
+							<label for="nens">Si</label>
+							<input type="radio" value="true" name="nens" <%=nens === true ? 'checked':''%> />
+
+							<label for="nens">No</label>
+							<input type="radio" value="false" name="nens" <%=nens === false ? 'checked':''%> />
+						</div>
+					</p>
+					<br />
+					<p>
+						<div class="button">
+							<span class="plane transition"></span>
+							<span class="check"></span>
+						</div>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		var model = {
+			id: '<%=_id%>',
+			vindra: <%=JSON.stringify(vindra)%>,
+			parella: <%=JSON.stringify(parella)%>,
+			nens: <%=JSON.stringify(nens)%>
+		};
+	</script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
