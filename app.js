@@ -7,7 +7,7 @@ const config     = require('./config');
 const port       = (process.env.PORT || config.SERVER_PORT);
 const ip         = (process.env.OPENSHIFT_NODEJS_IP || config.IP);
 const mongoUri   = process.env.OPENSHIFT_MONGODB_DB_HOST ?
-                   `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/invitacio`
+                   `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/invitacions`
                    : config.MONGO;
 
 const Invitacio  = require('./models/invitacio');
