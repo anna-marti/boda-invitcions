@@ -59,4 +59,25 @@ $(function(){
     });
   });
 
+  function resize() {
+    var ratio = ($(window).width()/600);
+
+    if ($(window).width() < 600) {
+      $('#envelope').css('zoom', ratio);
+
+      if ($(window).height() > 800*ratio) {
+        console.log('AIAIAIAI');
+        $('#envelope').css('margin-top', $(window).height()/ratio - 400);
+      }
+    }
+
+    if ($(window).height() > 800 && $(window).width() > 600) {
+      $('#envelope').css('margin-top', $(window).height() - 400);
+    }
+  }
+
+  resize();
+
+  $(window).on('resize', resize);
+
 });

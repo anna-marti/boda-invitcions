@@ -11,16 +11,21 @@ body{
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin:0;
+  text-shadow: 0 2px rgba(255,255,255,1);
 }
 
+a {
+  color: #666;
+  font-weight: bold;
+}
+
+.welcome {
+  font-size: 1.2em;
+}
 .recipient {
   font-family: $font-family;
   font-size: 3em;
   margin-top: 3em;
-}
-
-.welcome {
-  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 #envelope{
@@ -147,8 +152,8 @@ body{
 #card_outside_front{
   position: absolute;
   width: calc(100% - 40px);
-  background: $color_1;
-  color: white;
+  background: url('../images/paper.jpg');
+  color: #333;
   border-radius: 5px;
   font-family: $font-family;
   font-size: 2em;
@@ -184,12 +189,13 @@ body{
     vertical-align: middle;
     box-shadow: hsla(0,0%,100%,.15) 0 1px 1px, inset hsla(0,0%,0%,.5) 0 0 0 1px;
     background-color: hsla(0,0%,0%,.2);
-    background-image: -webkit-radial-gradient( hsla(42,100%,90%,1) 0%, hsla(42,100%,70%,1) 15%, hsla(42,100%,60%,.3) 28%, hsla(42,100%,30%,0) 70% );
+    background-image: -webkit-radial-gradient( hsla(170,100%,90%,1) 0%, hsla(170,100%,70%,1) 15%, hsla(170,100%,60%,.3) 28%, hsla(170,100%,30%,0) 70% );
     background-repeat: no-repeat;
     -webkit-transition: background-position .15s cubic-bezier(.8, 0, 1, 1),
     -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);
     outline: none;
   }
+
   input:checked {
     -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),
     -webkit-transform .25s cubic-bezier(0, 0, .2, 1);
@@ -230,7 +236,7 @@ body{
   width: 80px;
   height: 80px;
   position: absolute;
-  background: rgb(244, 216, 106);
+  background: #333;//rgb(244, 216, 106);
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%)translateY(50%);
@@ -239,6 +245,7 @@ body{
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.9);
 }
 
 .plane {

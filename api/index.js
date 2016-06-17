@@ -73,7 +73,11 @@ module.exports = () => {
         invitacions
       });
     });
-  })
+  });
+
+  router.get('/ping', (req, res, next) => {
+    res.json({});
+  });
 
   return router;
 };
